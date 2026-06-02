@@ -98,17 +98,17 @@ for value in student.values():
     print(value)
 
 # loop through both key-value pair:
-for keys, value in student.item():
+for keys,value in student.item():
     print(keys,value)
 
 
 # Nested Dictionary:
 
 main_studnet = {
-    'student1' : {'name' : 'Yahya', 'age' : '15'}
-    'student2' ; {'name' : 'John', 'age' : '14', 'grade' : 'A'}
+    'student1' : {'name' : 'Yahya', 'age' : '15'},
+    #'student2' ; {'name' : 'John', 'age' : '14', 'grade' : 'A'}
 }
-print(main_student)
+#print(main_student)
 print(main_studnet['student1'])
 print(main_studnet['student1']['name'])
 
