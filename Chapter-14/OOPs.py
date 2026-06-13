@@ -153,7 +153,45 @@ student_1 = Student('Yahya', 11, 96)
 student_2 = Student('Vishaka', 10, 92)
 
 # Child Class - Beta
-class GraduateStudent(Student):
-    def __init__(self, name, grade, percentage, stream): # Parameters from parent class and new parameter in new child class.
+class GraduateStudent(Student): # Graduate student is a child class which is inheriting property & methods from student parent class.
+    def __init__(self, name, grade, percentage, stream): # Old 
+        # Parameters from parent class and new parameter in new child class.
         super().__init__(name, grade, percentage) # Call Parent
-        self.stream = stream
+        self.stream = stream # New attribute in child class
+
+Grad_Student1 = GraduateStudent('Yahya', 12, 96, 'PCM')
+print(Grad_Student1.stream)         
+
+
+# 4.  Polymorphism :-  Allows method in difft class to have same name but have difft behaviour depending on objects.
+
+class Student:   # Student Class 
+    def __init__(self, name, grade, percentage):  # Method
+        self.name = name  # Attribute
+        self.grade = grade  # Attribute
+        self.percentage = percentage  # Attribute
+    
+    def student_details(self): # Method - abstraction
+        print(f'{self.name} is in class {self.grade} with {self.percentage+2}%')  # Hidden From Users
+# Object - instance of a class
+student_1 = Student('Yahya', 11, 96)
+student_2 = Student('Vishaka', 10, 92)
+
+# Child Class - Beta
+class GraduateStudent(Student): 
+    def __init__(self, name, grade, percentage, stream):
+        super().__init__(name, grade, percentage) 
+        self.stream = stream 
+       
+        def student_details(self):  # Method
+            print(f'{self.name} is in {self.grade} with {self.percentage} and from Stream is {self.stream}')
+
+# Object - Student Class
+student_1 = Student('Yahya', 11, 96)
+
+# Object - GraduateStudent Class
+Grad_Student1 = GraduateStudent('Yahya', 12, 96, 'PCM')
+print(Grad_Student1.stream)         
+
+student_1.student_details()
+Grad_Student1.student_details()
